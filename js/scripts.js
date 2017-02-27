@@ -1,31 +1,34 @@
-var boardSize = document.querySelector('.size--input');
+var boardSize = 50;
 var intervalInstance;
 var stopGame;
 var currentState;
 var newGameState;
+var myIntervalInstance;
+var limit = 0;
+var nameGameState = [354, 360, 363, 372, 393, 404, 405, 409, 410, 422, 443, 454, 456, 458, 460, 463, 467, 468, 469, 472, 480, 481, 482, 487, 488, 489, 493, 504, 507, 510, 513, 516, 522, 523, 524, 525, 529, 533, 540, 543, 554, 560, 563, 566, 572, 576, 579, 580, 581, 582, 583, 587, 588, 589, 590, 593, 604, 610, 613, 616, 622, 626, 629, 636, 640, 643, 654, 660, 663, 667, 668, 669, 672, 676, 679, 680, 681, 682, 683, 687, 688, 689, 690, 694, 854, 860, 870, 874, 904, 910, 920, 924, 940, 954, 960, 964, 965, 966, 970, 974, 979, 980, 981, 986, 987, 990, 991, 992, 1004, 1010, 1017, 1020, 1024, 1028, 1032, 1035, 1040, 1054, 1057, 1060, 1064, 1065, 1066, 1067, 1070, 1074, 1078, 1079, 1080, 1081, 1082, 1085, 1090, 1104, 1106, 1108, 1110, 1113, 1117, 1120, 1124, 1128, 1135, 1140, 1155, 1159, 1164, 1165, 1166, 1167, 1171, 1175, 1178, 1179, 1180, 1181, 1182, 1185, 1190, 1191];
 
-if(!boardSize.value){
-  boardSize = 50;
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
 
-document.querySelector('.size--input').addEventListener('blur', function(e){
-  if(!e.target.value){
+shuffleArray(nameGameState);
+
+function createName () {
+  if(limit === nameGameState.length){
+    clearInterval(myIntervalInstance);
     return;
   }
-  var myBoard = document.getElementById('gameBoard');
-  boardSize = e.target.value;
-  document.body.removeChild(myBoard);
-  createBoard(boardSize);
-});
-
-document.querySelector('.size--input').addEventListener('keydown', function(e){
-  if(e.keyCode === 13 && e.target.value){
-    var myBoard = document.getElementById('gameBoard');
-    boardSize = e.target.value;
-    document.body.removeChild(myBoard);
-    createBoard(boardSize);
-  }
-});
+  myIntervalInstance = setInterval(createName, 125);
+  document.getElementsByClassName('table--cell')[nameGameState[limit]].classList.add('alive');
+  limit += 1;
+};
 
 function createBoard (size){
   var myBoard = document.createElement('table');
@@ -39,16 +42,17 @@ function createBoard (size){
     }
     myBoard.appendChild(tableRow);
   }
-  document.body.appendChild(myBoard);
+  document.getElementById('home').appendChild(myBoard);
 
   document.getElementById('gameBoard').addEventListener('click', function(e){
-    if(e.target.classList.contains('table--cell')){
+    if(e.target.classList.contains('table--cell') && !e.target.classList.contains('alive')){
       e.target.classList.add('alive');
-    }
+    } else e.target.classList.remove('alive');
   });
 }
 
 createBoard(boardSize);
+createName();
 
 document.querySelector('.start--button').addEventListener('click', function(e){
   stopGame = false;
@@ -63,10 +67,7 @@ document.querySelector('.start--button').addEventListener('click', function(e){
 
 document.querySelector('.stop--button').addEventListener('click', function(e){
   stopGame = true;
-
-  document.body.removeChild(document.querySelector('#gameBoard'));
-
-  createBoard(boardSize);
+  window.location.reload();
 });
 
 function gameOfLife(){
