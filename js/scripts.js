@@ -33,7 +33,7 @@ function createName () {
 function createBoard (size){
   var myBoard = document.createElement('table');
   myBoard.id = 'gameBoard';
-  for(var i = 0; i < size; i++){
+  for(var i = 0; i < 20; i++){
     var tableRow = document.createElement('tr');
     for(var j = 0; j < size; j++){
       var tableCell = document.createElement('td');
@@ -56,10 +56,8 @@ createName();
 
 document.querySelector('.start--button').addEventListener('click', function(e){
   stopGame = false;
-
-  document.querySelectorAll('.table--cell').forEach(function(element){
-    element.style.border = "none";
-    element.style.borderRadius = "100%";
+  document.querySelectorAll('.button-container').forEach(function(element){
+    element.style.top = "90vh";
   });
 
   gameOfLife();
@@ -67,7 +65,9 @@ document.querySelector('.start--button').addEventListener('click', function(e){
 
 document.querySelector('.stop--button').addEventListener('click', function(e){
   stopGame = true;
+
   window.location.reload();
+
 });
 
 function gameOfLife(){

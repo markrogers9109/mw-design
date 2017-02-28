@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="UTF-8">
@@ -8,37 +8,45 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Overpass" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="LittleFragments/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="LittleFragments/css/fragments.css" />
+    <link rel="stylesheet" type="text/css" href="LittleFragments/css/demo.css" />
+    <script>document.documentElement.className = 'js';</script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="top">
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Home</a></li>
-                    <li><a href="badges.html">About</a></li>
-                    <li><a href="collapsible.html">Contact</a></li>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Home</a></li>
-                    <li><a href="badges.html">About</a></li>
-                    <li><a href="collapsible.html">Contact</a></li>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-    <div class="container-fluid" id="home">
-        <button class="start--button">Start The Game Of Life</button>
-        <button class="stop--button">Reset</button>
-        <div class="row">
-            <div class="container">
-                <h1></h1>
-            </div>
+
+    <div class="container-fluid hero" id="home">
+        <div class="button-container">
+            <button class="start--button btn">Start The Game Of Life</button>
+            <button class="stop--button btn">Reset</button>
         </div>
+        <!-- <span>Enter a value to change the size of the grid.</span> -->
+        <!-- <input type="text" class="size--input"> -->
+        <!-- <p>Once you have a grid size you like, simply click on a cell to bring that cell to life! Once you get a group of live cells start the game and see what happens!</p>
+        <p>Hint: If all the cells just immediately die, click the reset button and try creating bigger packs of cells!</p> -->
+        <!-- <div class="row"> -->
     </div>
     <div class="container hr-container">
         <hr />
@@ -46,7 +54,13 @@
     <div class="container-fluid" id="about">
         <div class="row">
             <div class="container">
-                <h1>About</h1>
+                <section class="section section--flow">
+    				<div class="content">
+    					<div id="frag-2" class="fragment-wrap fragment-wrap--right" style="background-image: url(LittleFragments/img/4.jpg)"></div>
+    					<h2 class="title title--left">hollos</h2>
+    					<p class="text text--left"><span class="deco-bg deco-bg--color-2">“Every thought, every word, and every action that adds to the positive and the wholesome is a contribution to peace. Each and every one of us is capable of making such a contribution.” ― Aung San Suu Kyi</span></p>
+    				</div>
+    			</section>
             </div>
         </div>
     </div>
@@ -54,9 +68,23 @@
         <div class="row">
             <div class="container">
                 <h1>Contact</h1>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae et, sint repellat veritatis ipsa explicabo ullam sit laborum! Ipsam aliquid libero rerum consequatur tempore dolore commodi, quidem, molestias deserunt quibusdam repellendus fugit aperiam. Hic autem harum in accusamus, reiciendis, illo impedit nesciunt cupiditate placeat itaque, nulla voluptas. Placeat, cum, eum.</p>
             </div>
         </div>
     </div>
+    <div class="fixed-action-btn vertical click-to-toggle">
+        <a class="btn-floating btn-large">
+            <i class="material-icons section-navigation">navigation</i>
+        </a>
+        <ul>
+            <li><a href="#top" class="btn-floating"><i class="material-icons section-scroll">store</i></a></li>
+            <li><a href="#about" class="btn-floating"><i class="material-icons section-scroll">perm_identity</i></a></li>
+            <li><a href="#contact" class="btn-floating"><i class="material-icons section-scroll">work</i></a></li>
+            <li><a href="#contact" class="btn-floating"><i class="material-icons section-scroll">call</i></a></li>
+        </ul>
+    </div>
+    <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -79,7 +107,71 @@
 
         $(".button-collapse").sideNav();
     </script>
+<<<<<<< HEAD
     <script src="js/scripts.js"></script>
+=======
+    <script src="LittleFragments/js/imagesloaded.pkgd.min.js"></script>
+    <script src="LittleFragments/js/main.js"></script>
+    <script>
+        (function() {
+            imagesLoaded(document.querySelectorAll('.fragment-wrap'), { background: true }, function() {
+                document.body.classList.remove('loading');
+                new FragmentsFx(document.getElementById('frag-1'));
+                new FragmentsFx(document.getElementById('frag-2'), {
+                    fragments: 15,
+                    boundaries: {x1: 200, x2: 100, y1: 10, y2: 50},
+                    randomIntervals: {
+                        top: {min: 0,max: 90},
+                        left: {min: 0,max: 90},
+                        dimension: {
+                            width: {min: 5,max: 20, fixedHeight: 5},
+                            height: {min: 10,max: 100, fixedWidth: 5}
+                        }
+                    }
+                });
+                new FragmentsFx(document.getElementById('frag-3'), {
+                    fragments: 20,
+                    boundaries: {x1: 100, x2: 300, y1: 0, y2: 0},
+                    randomIntervals: {
+                        top: {min: 0,max: 90},
+                        left: {min: 0,max: 90},
+                        dimension: {
+                            width: {min: 50,max: 100, fixedHeight: 0.5},
+                            height: {min: 50,max: 100, fixedWidth: 0.5}
+                        }
+                    }
+                });
+                new FragmentsFx(document.getElementById('frag-4'), {
+                    fragments: 10,
+                    boundaries: {x1: 250, x2: 75, y1: 50, y2: 50},
+                    randomIntervals: {
+                        top: {min: 0,max: 90},
+                        left: {min: 0,max: 90},
+                        dimension: {
+                            width: {min: 30,max: 50, fixedHeight: 10},
+                            height: {min: 30,max: 50, fixedWidth: 10}
+                        }
+                    },
+                    parallax: true
+                });
+                new FragmentsFx(document.getElementById('frag-5'), {
+                    fragments: 20,
+                    boundaries: {x1: 50, x2: 300, y1: 0, y2: 0},
+                    randomIntervals: {
+                        top: {min: 0,max: 40},
+                        left: {min: 0,max: 90},
+                        dimension: {
+                            width: {min: 10,max: 50, fixedHeight: 0.5},
+                            height: {min: 5,max: 10, fixedWidth: 5}
+                        }
+                    },
+                    parallax: true,
+                    randomParallax: {min: 30, max: 300}
+                });
+            });
+        })();
+    </script>
+>>>>>>> 152bd0af97742b98ccf4ad07fdde6f91e2769e05
 </body>
 
 </html>
