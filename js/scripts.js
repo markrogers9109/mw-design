@@ -1,36 +1,13 @@
-var boardSize = document.querySelector('.size--input');
+var boardSize = 50;
 var intervalInstance;
 var stopGame;
 var currentState;
 var newGameState;
 
-if(!boardSize.value){
-  boardSize = 50;
-}
-
-document.querySelector('.size--input').addEventListener('blur', function(e){
-  if(!e.target.value){
-    return;
-  }
-  var myBoard = document.getElementById('gameBoard');
-  boardSize = e.target.value;
-  document.body.removeChild(myBoard);
-  createBoard(boardSize);
-});
-
-document.querySelector('.size--input').addEventListener('keydown', function(e){
-  if(e.keyCode === 13 && e.target.value){
-    var myBoard = document.getElementById('gameBoard');
-    boardSize = e.target.value;
-    document.body.removeChild(myBoard);
-    createBoard(boardSize);
-  }
-});
-
 function createBoard (size){
   var myBoard = document.createElement('table');
   myBoard.id = 'gameBoard';
-  for(var i = 0; i < size; i++){
+  for(var i = 0; i < 20; i++){
     var tableRow = document.createElement('tr');
     for(var j = 0; j < size; j++){
       var tableCell = document.createElement('td');
@@ -39,7 +16,7 @@ function createBoard (size){
     }
     myBoard.appendChild(tableRow);
   }
-  document.body.appendChild(myBoard);
+  document.getElementById('home').appendChild(myBoard);
 
   document.getElementById('gameBoard').addEventListener('click', function(e){
     if(e.target.classList.contains('table--cell')){
@@ -52,10 +29,8 @@ createBoard(boardSize);
 
 document.querySelector('.start--button').addEventListener('click', function(e){
   stopGame = false;
-
-  document.querySelectorAll('.table--cell').forEach(function(element){
-    element.style.border = "none";
-    element.style.borderRadius = "100%";
+  document.querySelectorAll('.button-container').forEach(function(element){
+    element.style.top = "90vh";
   });
 
   gameOfLife();
@@ -64,7 +39,7 @@ document.querySelector('.start--button').addEventListener('click', function(e){
 document.querySelector('.stop--button').addEventListener('click', function(e){
   stopGame = true;
 
-  document.body.removeChild(document.querySelector('#gameBoard'));
+  document.getElementById('home').removeChild(document.querySelector('#gameBoard'));
 
   createBoard(boardSize);
 });
