@@ -106,7 +106,7 @@ table {
 
 .button-container {
 	position: absolute;
-	top: 50vh;
+	top: 90vh;
 	left: 50%;
 	transform: translateX(-50%);
 	transition: all 0.2s ease-in;
@@ -123,8 +123,8 @@ table {
 }
 
 .alive {
-  background: #037034;
-  border: 1px solid #037034;
+  background: #f3f2f3;
+  border: 1px solid #f3f2f3;
   box-shadow: 2px 2px 5px #2C3331;
   transition: all 0.1s ease-in-out;
 }
@@ -166,4 +166,12 @@ table {
 .active .btn-floating.btn-large i.material-icons.section-navigation {
 	color: #05BA89;
 	transition: all 0.2s linear;
+}
+
+.work-container .col {
+	padding: 0;
+}
+
+.work-container .col img {
+	width: 32.95vw;
 }
