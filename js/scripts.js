@@ -25,7 +25,7 @@ function createName () {
     clearInterval(myIntervalInstance);
     return;
   }
-  myIntervalInstance = setInterval(createName, 125);
+  myIntervalInstance = setInterval(createName, 175);
   document.getElementsByClassName('table--cell')[nameGameState[limit]].classList.add('alive');
   limit += 1;
 };
