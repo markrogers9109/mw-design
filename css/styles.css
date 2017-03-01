@@ -106,8 +106,8 @@ table {
 
 .button-container {
 	position: absolute;
-	top: 90vh;
-	left: 50%;
+	top: 63vh;
+	left: 8.5%;
 	transform: translateX(-50%);
 	transition: all 0.2s ease-in;
 }

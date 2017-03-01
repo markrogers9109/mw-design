@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="LittleFragments/css/fragments.css" />
     <link rel="stylesheet" type="text/css" href="LittleFragments/css/demo.css" />
     <script>document.documentElement.className = 'js';</script>
+    <link rel="stylesheet" href="css/arcade.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -25,25 +26,31 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#top">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="#top">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </div>
+
     <div class="container-fluid hero" id="home">
         <div class="button-container">
-            <button class="start--button btn">Start The Game Of Life</button>
-            <button class="stop--button btn">Reset</button>
+            <!-- <button class="start--button btn">Start The Game Of Life</button>
+            <button class="stop--button btn">Reset</button> -->
+            <button class="push--flat start--button">Start</button>
+            <button class="push--flat stop--button btn-bottom">Reset</button>
         </div>
         <!-- <span>Enter a value to change the size of the grid.</span> -->
         <!-- <input type="text" class="size--input"> -->
         <!-- <p>Once you have a grid size you like, simply click on a cell to bring that cell to life! Once you get a group of live cells start the game and see what happens!</p>
         <p>Hint: If all the cells just immediately die, click the reset button and try creating bigger packs of cells!</p> -->
+
     </div>
     <div class="container hr-container">
         <hr />
@@ -104,7 +111,6 @@
             <li><a href="#contact" class="btn-floating"><i class="material-icons section-scroll">call</i></a></li>
         </ul>
     </div>
-    <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -127,7 +133,8 @@
 
         $(".button-collapse").sideNav();
     </script>
-    <!-- <script src="LittleFragments/js/imagesloaded.pkgd.min.js"></script> -->
+    <script src="js/scripts.js"></script>
+    <script src="LittleFragments/js/imagesloaded.pkgd.min.js"></script>
     <script src="LittleFragments/js/main.js"></script>
     <script>
         (function() {
