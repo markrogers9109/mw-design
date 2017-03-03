@@ -221,6 +221,26 @@ table {
 	font-size: 36px;
 }
 
+.flex--container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+.work-container > div.flex--container > .col {
+	margin: 25px;
+}
+
+.flex--container > .col > img {
+	width: 100%;
+	cursor: pointer;
+}
+
+.flex--container > .col > img:hover {
+	
+}
+
 @media all and (min-width: 1400px){
 	.button-container {
 		top: 45vh;
