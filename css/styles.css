@@ -106,7 +106,7 @@ table {
 
 .button-container {
 	position: absolute;
-	top: 63vh;
+	top: 425px;
 	left: 8.5%;
 	transform: translateX(-50%);
 	transition: all 0.2s ease-in;
