@@ -29,12 +29,12 @@ h1 {
 
 .brand-logo {
 	color: #F3F2F3 !important;
-    background-image: url('../images/mw-alt-logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: inherit;
-    width: 75px;
+  background-image: url('../images/mw-alt-logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: inherit;
+  width: 75px;
 }
 
 .right.hide-on-med-and-down ul li:hover {
@@ -47,25 +47,32 @@ h1 {
 }
 
 #home {
-	/*height: 100vh;*/
 	padding-top: 0px;
 }
 
-#about, #contact {
+#about {
 	height: 100vh;
 	padding-top: 50px;
 }
 
+#contact {
+	height: 25vh;
+}
+
+nav ul a:hover {
+	color: #037034;
+}
+
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background-color: #04A34B;
-	color: #F3F2F3;
+	color: #037034;
 }
 
 .hero {
-    background-image: url('../images/mw-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url('../images/mw-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 	color: #037034;
 }
 
@@ -174,4 +181,33 @@ table {
 
 .work-container .col img {
 	width: 32.95vw;
+}
+
+.contact--container {
+	height: 100%;
+	text-align: center;
+}
+
+.contact--icons {
+	display: flex;
+  align-content: space-around;
+  justify-content: center;
+  flex-flow: row wrap;
+  height: 100%;
+}
+
+.contact--icons > i{
+	color: #000;
+	font-size: 50px;
+}
+
+.contact--icons > a > i{
+	color: #000;
+	font-size: 50px;
+}
+
+@media all and (min-width: 1400px){
+	.button-container {
+		top: 45vh;
+	}
 }
